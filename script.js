@@ -88,19 +88,44 @@ var upperCasedCharacters = [
   'Z'
 ];
 
+
 // Function to prompt user for password options
 function getPasswordOptions() {
-
+  var symbols = confirm("Include Special Characters:\n($@%&*,etc)")
+  var numbers = confirm("Include Numbers:\n(123456789)")
+  var lowercase = confirm("Include Lowercase Characters:\n(abcdefg)")
+  var uppercase = confirm("Include Uppercase Characters:\n(ABCDEFG)")
+  var passlength = parseFloat(prompt("Input password length between 10 and :\n(ABCDEFG)"))
+  return [symbols,numbers,lowercase,uppercase,passlength]
 }
+
+//
+let passoptions = getPasswordOptions()
+let passlength = passoptions[4]
+passoptions.pop()
+let optionsarr = [specialCharacters,numericCharacters,lowerCasedCharacters,upperCasedCharacters]
+let optionsarray = []
+for (let i =0;i<passoptions.length;i++){
+  if(passoptions[i]===true){
+    optionsarray = optionsarray.concat(optionsarr[i])
+  }
+}
+console.log(optionsarray)
 
 // Function for getting a random element from an array
 function getRandom(arr) {
-
+  var randomelement = arr[Math.floor(Math.random()*arr.length)]
+  return randomelement
 }
 
 // Function to generate password with user input
 function generatePassword() {
-
+  let password = []
+  for (let i = 0;i<passlength;i++){
+    password.push(getRandom(optionsarray))
+  }
+  let passwordstr = password.join("")
+  return passwordstr
 }
 
 // Get references to the #generate element

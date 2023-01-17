@@ -24,7 +24,7 @@ https://jalexander94.github.io/Password-Generator/
 
 To generate the password the user clicks the generate button they will then be asked a series of question via confirm alerts about which type of characters they would like to include, this will be followed up with a question as to how long the user wants the password to be once all confirms and prompts have been answered if the user has selected viable options they will be presented with a random password, if not they will be asked to try again
 
-![screenshot of the webpage with a password generated](images/Screenshot%202023-01-17%20at%2021.53.56.png?raw=true)
+![screenshot of the webpage with a password generated]([images/Screenshot%202023-01-17%20at%2021.53.56.png])
 ![screenshot of the webpage with the first alert asking character preferences](images/Screenshot%202023-01-17%20at%2021.55.59.png)
 ![screenshot of the webpage with the first alert confirmation](images/Screenshot%202023-01-17%20at%2021.56.11.png)
 ![screenshot of the webpage with the prompt asking for length of password](images/Screenshot%202023-01-17%20at%2021.56.27.png)

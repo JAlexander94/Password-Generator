@@ -92,25 +92,23 @@ var upperCasedCharacters = [
 // Function to prompt user for password options
 function getPasswordOptions() {
   var symbols = confirm("Include Special Characters:\n($@%&*,etc)")
+  if(symbols===true){alert("You have chosen to include Special Characters")}else{alert("You have chosen to not include Special Characters")}
   var numbers = confirm("Include Numbers:\n(123456789)")
+  if(numbers===true){alert("You have chosen to include Numeric Characters")}else{alert("You have chosen to not include Numeric Characters")}
   var lowercase = confirm("Include Lowercase Characters:\n(abcdefg)")
+  if(lowercase===true){alert("You have chosen to include Lowercase Characters")}else{alert("You have chosen to not include Lowercase Characters")}
   var uppercase = confirm("Include Uppercase Characters:\n(ABCDEFG)")
-  var passlength = parseFloat(prompt("Input password length between 10 and :\n(ABCDEFG)"))
-  return [symbols,numbers,lowercase,uppercase,passlength]
-}
-
-//
-let passoptions = getPasswordOptions()
-let passlength = passoptions[4]
-passoptions.pop()
-let optionsarr = [specialCharacters,numericCharacters,lowerCasedCharacters,upperCasedCharacters]
-let optionsarray = []
-for (let i =0;i<passoptions.length;i++){
-  if(passoptions[i]===true){
-    optionsarray = optionsarray.concat(optionsarr[i])
+  if(uppercase===true){alert("You have chosen to include Uppercase Characters")}else{alert("You have chosen to not include Uppercase Characters")}
+  if(symbols===false&&numbers===false&&lowercase===false&&uppercase===false){
+    alert("You must select at least one character type.\nPlease try again.")
+  }else{
+    var passlength = parseFloat(prompt("Input password length between 10 and 64:"))
+    if(passlength>=10&&passlength<=64){
+      return [symbols,numbers,lowercase,uppercase,passlength]
+    }else{alert("You have not entered a number between 10 & 64.\nPlease try again.")}
   }
+
 }
-console.log(optionsarray)
 
 // Function for getting a random element from an array
 function getRandom(arr) {
@@ -120,6 +118,16 @@ function getRandom(arr) {
 
 // Function to generate password with user input
 function generatePassword() {
+  let passoptions = getPasswordOptions()
+  let passlength = passoptions[4]
+  passoptions.pop()
+  let optionsarr = [specialCharacters,numericCharacters,lowerCasedCharacters,upperCasedCharacters]
+  let optionsarray = []
+  for (let i =0;i<passoptions.length;i++){
+    if(passoptions[i]===true){
+      optionsarray = optionsarray.concat(optionsarr[i])
+  }
+  }
   let password = []
   for (let i = 0;i<passlength;i++){
     password.push(getRandom(optionsarray))

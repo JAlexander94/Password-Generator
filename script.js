@@ -104,6 +104,7 @@ function getPasswordOptions() {
   }else{
     var passlength = parseFloat(prompt("Input password length between 10 and 64:"))
     if(passlength>=10&&passlength<=64){
+      alert("Your password will be "+passlength+" characters long.")
       return [symbols,numbers,lowercase,uppercase,passlength]
     }else{alert("You have not entered a number between 10 & 64.\nPlease try again.")}
   }

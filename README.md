@@ -18,7 +18,7 @@ The project specifically wanted the user to be able to select
 
 Click the link to run the website
 
-
+https://jalexander94.github.io/Password-Generator/
 
 ## Usage
 

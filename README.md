@@ -33,7 +33,7 @@ To generate the password the user clicks the generate button they will then be a
 
 MIT License
 
-Copyright (c) [2022] [Joshua Alexander]
+Copyright (c) [2023] [Joshua Alexander]
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -56,4 +56,4 @@ SOFTWARE.
 
 ## Tests
 
-Test the site by clickng the generate button
+Test the site by clicking the generate button
